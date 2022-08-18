@@ -1,4 +1,4 @@
-# HouseSmart Landing Page
+# HomeSmart Landing Page
 
 ## Description
 
