@@ -1,6 +1,6 @@
 name: Build and Deploy to Firebase Hosting
 on:
-  push:
+  pull_request:
     branches: main
 
 jobs:
