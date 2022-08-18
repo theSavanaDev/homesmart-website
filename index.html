@@ -55,7 +55,7 @@
 				<!-- navigation items start -->
 				<div
 					role="menubar"
-					class="absolute right-0 left-0 top-16 hidden flex-col items-center gap-4 bg-amber-400 p-6 text-center text-lg shadow-xl lg:static lg:flex lg:w-full lg:flex-row lg:justify-between lg:shadow-none"
+					class="absolute right-0 left-0 top-16 z-40 hidden flex-col items-center gap-4 bg-amber-400 p-6 text-center text-lg shadow-xl lg:static lg:flex lg:w-full lg:flex-row lg:justify-between lg:shadow-none"
 				>
 					<a
 						href="/"
@@ -115,6 +115,129 @@
 			<!-- images end -->
 		</header>
 		<!-- hero section end -->
+
+		<!-- benefits section start -->
+		<main class="grid gap-12 overflow-hidden px-8 sm:gap-16 md:gap-24 lg:gap-32">
+			<!-- download app button start -->
+			<a
+				href="#"
+				class="focus-state mx-auto my-12 flex gap-2 rounded-md bg-amber-400 py-2 px-6 shadow-xl ring-offset-white transition-shadow hover:shadow-none dark:text-neutral-900 dark:ring-amber-400 dark:ring-offset-neutral-900"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+					/>
+				</svg>
+				<span>Download the App</span>
+			</a>
+			<!-- download app button end -->
+
+			<!-- benefit cards start -->
+			<section aria-labelledby="benefits" class="relative">
+				<!-- dots on the side start -->
+				<img
+					src="./assets/dots.svg"
+					alt="Dots"
+					class="absolute top-1/2 -left-24 hidden -translate-y-1/2 lg:-left-7 lg:block"
+					aria-hidden="true"
+				/>
+				<img
+					src="./assets/dots.svg"
+					alt="Dots"
+					class="absolute top-1/2 -right-24 hidden -translate-y-1/2 lg:-right-7 lg:block"
+					aria-hidden="true"
+				/>
+				<!-- dots on the side end -->
+
+				<h2 id="benefits" class="sr-only">Benefits of HomeSmart</h2>
+
+				<!-- cards start -->
+				<div
+					class="container mx-auto flex max-w-5xl flex-wrap items-start justify-center gap-12 md:justify-between"
+				>
+					<!-- card one start -->
+					<div class="grid justify-items-center gap-4 text-center md:flex-1">
+						<div class="rounded-full border-8 border-amber-400 p-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-14 w-14"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+								/>
+							</svg>
+						</div>
+						<h3 class="text-3xl font-bold">Safe</h3>
+						<p>Our products come private and secure out-of-the-box</p>
+					</div>
+					<!-- card one end -->
+
+					<!-- card two start -->
+					<div class="grid justify-items-center gap-4 text-center md:flex-1">
+						<div class="rounded-full border-8 border-amber-400 p-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-14 w-14"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M13 10V3L4 14h7v7l9-11h-7z"
+								/>
+							</svg>
+						</div>
+						<h3 class="text-3xl font-bold">Efficient</h3>
+						<p>Feel good about your purchase and the environment</p>
+					</div>
+					<!-- card two end -->
+
+					<!-- card three start -->
+					<div class="grid justify-items-center gap-4 text-center md:flex-1">
+						<div class="rounded-full border-8 border-amber-400 p-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-14 w-14"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+								/>
+							</svg>
+						</div>
+						<h3 class="text-3xl font-bold">Proven</h3>
+						<p>The best smart home app for over 10 years</p>
+					</div>
+					<!-- card three end -->
+				</div>
+				<!-- cards end -->
+			</section>
+			<!-- benefit cards end -->
+		</main>
+		<!-- benefits section end -->
 		<script type="module" src="/main.js"></script>
 	</body>
 	<!-- global styling end -->
