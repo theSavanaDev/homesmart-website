@@ -22,7 +22,7 @@ Using the following steps, you can run the project on your local computer.
 
 1. Clone the repository to a folder on your local computer using this command
 
-`git clone https://github.com/thes3interdev/housesmart-landing-page.git`
+`git clone https://github.com/thes3interdev/homesmart-landing-page.git`
 
 2. Run NPM or Yarn to setup the project dependencies
 
