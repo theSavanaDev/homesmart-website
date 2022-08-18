@@ -1,0 +1,47 @@
+name: Build and Deploy to Firebase Hosting
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    name: Build Production Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+  deploy:
+    name: Deploy to Firebase Hosting
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
