@@ -1,16 +1,19 @@
-name: Build and Deploy to Firebase Hosting
+name: Build and Deploy to GitHub Pages
 on:
-  pull_request:
+  push:
     branches: main
 
 jobs:
   build:
-    name: Build Production Artifact
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
       - name: Install Dependencies
         run: npm install
@@ -18,30 +21,31 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload Production Artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: dist
-          path: dist
+          path: "./dist/"
 
   deploy:
-    name: Deploy to Firebase Hosting
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
-      - name: Download Artifact
+    environment:
+      name: github-pages
+      url: https://home-smart.s3.co.ke
+
+    steps:
+      - name: Download Production Artifact
         uses: actions/download-artifact@v2
         with:
-          name: dist
-          path: dist
+          path: "./dist/"
 
-      - name: Deploy to Firebase Hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
