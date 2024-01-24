@@ -1,4 +1,4 @@
-# HomeSmart Landing Page
+# HomeSmart Website
 
 ## Description
 
